@@ -1,5 +1,5 @@
+// Nav Component
 function Nav(props) {
-
   return (
     <div>
       <nav>
@@ -37,6 +37,18 @@ function Nav(props) {
   )
 }
 
+// Header Component
+function HeaderComponent(props) {
+  return (
+    <div className="header">
+      <div className="container">
+        <h1 className="header__title">We are <span>Webprint</span></h1>
+        <h2 className="header__subtitle"><span>digital &amp; branding</span> agency based in Jupiter and we would love to turn ideas into beautiful things.</h2>
+        <button className="header__button">See Portfolio</button>
+      </div>  
+    </div>
+  );
+}
 
 class App extends React.Component {
   toggleMenu(){
@@ -56,6 +68,7 @@ class App extends React.Component {
     return (
       <div>
         <Nav handleToggleMenu={this.toggleMenu}/>
+        <HeaderComponent/>
       </div>
     )
   }

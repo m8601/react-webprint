@@ -4,6 +4,7 @@ nav {
   top: 0;
   left: 0;
   width: 100%;
+  color: $text-grey;
 }
 
 .navigation {
@@ -42,7 +43,6 @@ nav {
   padding: 10px 0;
   font-size: 13px;
   font-weight: 900; 
-  font-family: 'Lato', sans-serif;
   text-decoration: none;
   cursor: pointer;
   &:hover li{
@@ -57,7 +57,7 @@ nav {
   li {
     transition: color .3s ease-in-out;
     list-style: none;
-    color: #fff;
+    color: $text-grey;
   }
 }
 

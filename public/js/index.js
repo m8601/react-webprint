@@ -6,8 +6,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+// Nav Component
 function Nav(props) {
-
   return React.createElement(
     "div",
     null,
@@ -87,6 +87,43 @@ function Nav(props) {
   );
 }
 
+// Header Component
+function HeaderComponent(props) {
+  return React.createElement(
+    "div",
+    { className: "header" },
+    React.createElement(
+      "div",
+      { className: "container" },
+      React.createElement(
+        "h1",
+        { className: "header__title" },
+        "We are ",
+        React.createElement(
+          "span",
+          null,
+          "Webprint"
+        )
+      ),
+      React.createElement(
+        "h2",
+        { className: "header__subtitle" },
+        React.createElement(
+          "span",
+          null,
+          "digital & branding"
+        ),
+        " agency based in Jupiter and we would love to turn ideas into beautiful things."
+      ),
+      React.createElement(
+        "button",
+        { className: "header__button" },
+        "See Portfolio"
+      )
+    )
+  );
+}
+
 var App = function (_React$Component) {
   _inherits(App, _React$Component);
 
@@ -116,7 +153,8 @@ var App = function (_React$Component) {
       return React.createElement(
         "div",
         null,
-        React.createElement(Nav, { handleToggleMenu: this.toggleMenu })
+        React.createElement(Nav, { handleToggleMenu: this.toggleMenu }),
+        React.createElement(HeaderComponent, null)
       );
     }
   }]);

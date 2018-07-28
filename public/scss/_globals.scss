@@ -1,7 +1,17 @@
 // Colors
 $main-red: #ff6760;
 $dark-grey: #262626;
+$light-grey: #2a2a2a;
+$text-grey: #d9d9d9;
 
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding-top: 100px;
+  font-family: 'Lato', sans-serif;
+}
 // CLasses
 .container {
   width: 90%;
