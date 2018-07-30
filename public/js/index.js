@@ -124,6 +124,51 @@ function HeaderComponent(props) {
   );
 }
 
+// ================== //
+// Features Section  
+// ================== //
+
+function Feature(props) {
+  return React.createElement(
+    "div",
+    { className: "feature" },
+    React.createElement("img", { className: "feature__image", src: props.imgSrc, alt: "Some customizable feature" }),
+    React.createElement(
+      "h3",
+      { className: "feature__name" },
+      props.featureName
+    ),
+    React.createElement(
+      "p",
+      { className: "feature__description" },
+      props.featureDesc
+    )
+  );
+}
+
+function Features(props) {
+  return React.createElement(
+    "div",
+    { className: "" },
+    React.createElement(
+      "div",
+      { className: "container" },
+      React.createElement(
+        "div",
+        { className: "features-container" },
+        React.createElement(Feature, { imgSrc: "./images/android.png", featureName: "Name", featureDesc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis, enim." }),
+        React.createElement(Feature, { imgSrc: "./images/computer.png", featureName: "Name", featureDesc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis, enim." }),
+        React.createElement(Feature, { imgSrc: "./images/camera.png", featureName: "Name", featureDesc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis, enim." }),
+        React.createElement(Feature, { imgSrc: "./images/watch.png", featureName: "Name", featureDesc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis, enim." })
+      )
+    )
+  );
+}
+
+// ================== //
+// ================== //
+// ================== //
+
 var App = function (_React$Component) {
   _inherits(App, _React$Component);
 
@@ -154,7 +199,8 @@ var App = function (_React$Component) {
         "div",
         null,
         React.createElement(Nav, { handleToggleMenu: this.toggleMenu }),
-        React.createElement(HeaderComponent, null)
+        React.createElement(HeaderComponent, null),
+        React.createElement(Features, null)
       );
     }
   }]);

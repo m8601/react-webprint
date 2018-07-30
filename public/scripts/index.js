@@ -50,6 +50,39 @@ function HeaderComponent(props) {
   );
 }
 
+// ================== //
+// Features Section  
+// ================== //
+
+function Feature(props) {
+  return (
+    <div className="feature">
+      <img className="feature__image" src={props.imgSrc} alt="Some customizable feature"/>
+      <h3 className="feature__name">{props.featureName}</h3>
+      <p className="feature__description">{props.featureDesc}</p>   
+      </div>
+  );
+}
+
+function Features(props){
+  return (
+    <div className="">
+      <div className="container">
+        <div className="features-container">
+          <Feature imgSrc="./images/android.png" featureName="Name" featureDesc="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis, enim."/>
+          <Feature imgSrc="./images/computer.png" featureName="Name" featureDesc="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis, enim."/>
+          <Feature imgSrc="./images/camera.png" featureName="Name" featureDesc="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis, enim."/>
+          <Feature imgSrc="./images/watch.png" featureName="Name" featureDesc="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis, enim."/>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ================== //
+// ================== //
+// ================== //
+
 class App extends React.Component {
   toggleMenu(){
     const btnSpan = document.querySelectorAll('.navigation__button span');
@@ -69,6 +102,7 @@ class App extends React.Component {
       <div>
         <Nav handleToggleMenu={this.toggleMenu}/>
         <HeaderComponent/>
+        <Features />
       </div>
     )
   }
