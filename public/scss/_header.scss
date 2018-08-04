@@ -39,7 +39,7 @@
   outline: none;
   transition: all .3s ease-in-out;
   &:hover {
-    background: #595959;
+    background: $button-grey;
     //color: $main-red;
   }
 }

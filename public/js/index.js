@@ -149,7 +149,7 @@ function Feature(props) {
 function Features(props) {
   return React.createElement(
     "div",
-    { className: "" },
+    { className: "features" },
     React.createElement(
       "div",
       { className: "container" },
@@ -169,13 +169,223 @@ function Features(props) {
 // ================== //
 // ================== //
 
-var App = function (_React$Component) {
-  _inherits(App, _React$Component);
+// ================== //
+// Gallery Section  
+// ================== //
 
-  function App() {
+var Gallery = function (_React$Component) {
+  _inherits(Gallery, _React$Component);
+
+  function Gallery(props) {
+    _classCallCheck(this, Gallery);
+
+    var _this = _possibleConstructorReturn(this, (Gallery.__proto__ || Object.getPrototypeOf(Gallery)).call(this, props));
+
+    _this.setCategory = function (category) {
+      _this.setState({
+        activeCategory: category
+      });
+    };
+
+    _this.state = {
+      activeCategory: 'All'
+    };
+    return _this;
+  }
+
+  _createClass(Gallery, [{
+    key: "render",
+    value: function render() {
+      return React.createElement(
+        "div",
+        { className: "gallery" },
+        React.createElement(
+          "div",
+          { className: "container" },
+          React.createElement(
+            "h2",
+            { className: "gallery__title" },
+            "Our Featured Works"
+          ),
+          React.createElement(
+            "p",
+            { className: "gallery__subtitle" },
+            "Curabitur blandit tempus porttitor. Maecenas faucibus mollis interdum."
+          ),
+          React.createElement(
+            "div",
+            { className: "gallery__controls" },
+            React.createElement(GalleryButton, { isActive: this.state.activeCategory === 'All' ? true : false, setCategory: this.setCategory, category: "All" }),
+            React.createElement(GalleryButton, { isActive: this.state.activeCategory === 'Graphic' ? true : false, setCategory: this.setCategory, category: "Graphic" }),
+            React.createElement(GalleryButton, { isActive: this.state.activeCategory === 'Illustration' ? true : false, setCategory: this.setCategory, category: "Illustration" }),
+            React.createElement(GalleryButton, { isActive: this.state.activeCategory === 'Motion' ? true : false, setCategory: this.setCategory, category: "Motion" })
+          ),
+          React.createElement(
+            "div",
+            { className: "works" },
+            React.createElement(WorkItem, {
+              imgSrc: "./images/portfolio_1.jpg",
+              alt: "Some generic alt text",
+              imgCategory: "Graphic",
+              activeCategory: this.state.activeCategory
+            }),
+            React.createElement(WorkItem, {
+              imgSrc: "./images/portfolio_2.jpg",
+              alt: "Some generic alt text",
+              imgCategory: "Illustration",
+              activeCategory: this.state.activeCategory
+            }),
+            React.createElement(WorkItem, {
+              imgSrc: "./images/portfolio_3.jpg",
+              alt: "Some generic alt text",
+              imgCategory: "Illustration",
+              activeCategory: this.state.activeCategory
+            }),
+            React.createElement(WorkItem, {
+              imgSrc: "./images/portfolio_4.jpg",
+              alt: "Some generic alt text",
+              imgCategory: "Motion",
+              activeCategory: this.state.activeCategory
+            }),
+            React.createElement(WorkItem, {
+              imgSrc: "./images/portfolio_5.jpg",
+              alt: "Some generic alt text",
+              imgCategory: "Illustration",
+              activeCategory: this.state.activeCategory
+            }),
+            React.createElement(WorkItem, {
+              imgSrc: "./images/portfolio_6.jpg",
+              alt: "Some generic alt text",
+              imgCategory: "Motion",
+              activeCategory: this.state.activeCategory
+            }),
+            React.createElement(WorkItem, {
+              imgSrc: "./images/portfolio_7.jpg",
+              alt: "Some generic alt text",
+              imgCategory: "Illustration",
+              activeCategory: this.state.activeCategory
+            }),
+            React.createElement(WorkItem, {
+              imgSrc: "./images/portfolio_8.jpg",
+              alt: "Some generic alt text",
+              imgCategory: "Graphic",
+              activeCategory: this.state.activeCategory
+            }),
+            React.createElement(WorkItem, {
+              imgSrc: "./images/portfolio_9.jpg",
+              alt: "Some generic alt text",
+              imgCategory: "Motion",
+              activeCategory: this.state.activeCategory
+            }),
+            React.createElement(WorkItem, {
+              imgSrc: "./images/portfolio_10.jpg",
+              alt: "Some generic alt text",
+              imgCategory: "Motion",
+              activeCategory: this.state.activeCategory
+            }),
+            React.createElement(WorkItem, {
+              imgSrc: "./images/portfolio_11.jpg",
+              alt: "Some generic alt text",
+              imgCategory: "Graphic",
+              activeCategory: this.state.activeCategory
+            }),
+            React.createElement(WorkItem, {
+              imgSrc: "./images/portfolio_12.jpg",
+              alt: "Some generic alt text",
+              imgCategory: "Graphic",
+              activeCategory: this.state.activeCategory
+            })
+          )
+        )
+      );
+    }
+  }]);
+
+  return Gallery;
+}(React.Component);
+
+var GalleryButton = function (_React$Component2) {
+  _inherits(GalleryButton, _React$Component2);
+
+  function GalleryButton(props) {
+    _classCallCheck(this, GalleryButton);
+
+    var _this2 = _possibleConstructorReturn(this, (GalleryButton.__proto__ || Object.getPrototypeOf(GalleryButton)).call(this, props));
+
+    _this2.handleClick = function (e) {
+      var category = e.target.innerHTML;
+      _this2.props.setCategory(category);
+    };
+
+    return _this2;
+  }
+
+  _createClass(GalleryButton, [{
+    key: "render",
+    value: function render() {
+      return React.createElement(
+        "button",
+        { onClick: this.handleClick, className: "gallery__button " + (this.props.isActive ? 'gallery__button--active' : '') },
+        this.props.category
+      );
+    }
+  }]);
+
+  return GalleryButton;
+}(React.Component);
+
+function WorkItem(props) {
+  return React.createElement(
+    "div",
+    { className: "work " + (props.activeCategory === 'All' || props.imgCategory === props.activeCategory ? "" : " + work--fade-out") },
+    React.createElement(
+      "div",
+      null,
+      React.createElement("img", { className: "work__img", src: props.imgSrc, alt: props.alt })
+    )
+  );
+}
+
+// ================== //
+// ================== //
+// ================== //
+
+// ================== //
+//    Get in touch  
+// ================== //
+Contact = function Contact() {
+  return React.createElement(
+    "div",
+    { className: "container" },
+    React.createElement(
+      "h2",
+      { className: "contact__title" },
+      "Get in Touch"
+    ),
+    React.createElement(
+      "p",
+      { className: "contact__subtitle" },
+      "Curabitur blandit tempus porttitor. Maecenas faucibus mollis interdum."
+    )
+  );
+};
+
+// ================== //
+// ================== //
+// ================== //
+
+var App = function (_React$Component3) {
+  _inherits(App, _React$Component3);
+
+  function App(props) {
     _classCallCheck(this, App);
 
-    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+    var _this3 = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
+
+    _this3.state = {
+      category: 'All'
+    };
+    return _this3;
   }
 
   _createClass(App, [{
@@ -200,7 +410,9 @@ var App = function (_React$Component) {
         null,
         React.createElement(Nav, { handleToggleMenu: this.toggleMenu }),
         React.createElement(HeaderComponent, null),
-        React.createElement(Features, null)
+        React.createElement(Features, null),
+        React.createElement(Gallery, null),
+        React.createElement(Contact, null)
       );
     }
   }]);

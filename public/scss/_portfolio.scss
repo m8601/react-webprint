@@ -1,0 +1,104 @@
+.gallery {
+  color: $main-grey;
+  text-align: center;
+  background: #fff;
+  padding: 50px 0;
+  
+}
+
+.gallery__title {
+  font-weight: 900;
+  font-size: 30px;
+  margin-bottom: 25px;
+}
+
+.gallery__subtitle {
+  font-weight: 300;
+  font-size: 20px;
+  margin-bottom: 50px;
+}
+
+.gallery__button {
+  background: $main-red;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 900;
+  margin: 0 5px 25px;
+  padding: 10px 20px;
+  transition: all .3s ease-in-out;
+  outline: none;
+  cursor: pointer;
+  &:hover {
+    background: $button-grey;
+  }
+}
+
+.gallery__button--active {
+  background: $button-grey;
+}
+
+.works {
+  display: flex;
+  flex-direction: column;
+  @media screen and (min-width: 569px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
+.work {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  div {
+    overflow: hidden;
+  }
+  @media screen and (min-width: 569px) {
+    width: 33%;
+    margin-bottom: 4px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: 25%;
+    margin-bottom: 10px;
+  }
+
+  @media screen and (min-width: 1367px) {
+    width: 25%;
+    margin-bottom: 20px;
+  }
+  
+}
+
+.work--fade-out {
+  animation: fade-out .3s forwards;
+}
+
+.work--hide {
+  display: none;
+}
+
+.work__img {
+  display: block;
+  max-width: 270px;
+  max-height: 220px;
+  width: 100%;
+  height: 100%;
+  transition: transform .3s ease-in-out;
+  &:hover {
+    transform: scale(1.25);
+    overflow: hidden;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: .3;
+  }
+}

@@ -66,7 +66,7 @@ function Feature(props) {
 
 function Features(props){
   return (
-    <div className="">
+    <div className="features">
       <div className="container">
         <div className="features-container">
           <Feature imgSrc="./images/android.png" featureName="Name" featureDesc="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis, enim."/>
@@ -83,7 +83,172 @@ function Features(props){
 // ================== //
 // ================== //
 
+// ================== //
+// Gallery Section  
+// ================== //
+class Gallery extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeCategory: 'All'
+    };
+  };1
+
+  setCategory = (category) => {
+    this.setState({
+      activeCategory: category
+    })
+  };
+
+  render(){ 
+    return (
+      <div className="gallery">
+        <div className="container">
+          <h2 className="gallery__title">Our Featured Works</h2>
+          <p className="gallery__subtitle">Curabitur blandit tempus porttitor. Maecenas faucibus mollis interdum.</p>
+          <div className="gallery__controls">
+            <GalleryButton isActive={this.state.activeCategory === 'All' ? true : false} setCategory={this.setCategory} category="All"/>
+            <GalleryButton isActive={this.state.activeCategory === 'Graphic' ? true : false} setCategory={this.setCategory} category="Graphic"/>
+            <GalleryButton isActive={this.state.activeCategory === 'Illustration' ? true : false} setCategory={this.setCategory} category="Illustration"/>
+            <GalleryButton isActive={this.state.activeCategory === 'Motion' ? true : false} setCategory={this.setCategory} category="Motion"/>
+          </div>
+          <div className="works">
+            <WorkItem 
+              imgSrc="./images/portfolio_1.jpg" 
+              alt="Some generic alt text"
+              imgCategory="Graphic"
+              activeCategory={this.state.activeCategory}
+            />
+            <WorkItem 
+              imgSrc="./images/portfolio_2.jpg" 
+              alt="Some generic alt text"
+              imgCategory="Illustration"
+              activeCategory={this.state.activeCategory}
+            />
+            <WorkItem 
+              imgSrc="./images/portfolio_3.jpg" 
+              alt="Some generic alt text"
+              imgCategory="Illustration"
+              activeCategory={this.state.activeCategory}
+            />
+            <WorkItem 
+              imgSrc="./images/portfolio_4.jpg" 
+              alt="Some generic alt text"
+              imgCategory="Motion"
+              activeCategory={this.state.activeCategory}
+            />
+            <WorkItem 
+              imgSrc="./images/portfolio_5.jpg" 
+              alt="Some generic alt text"
+              imgCategory="Illustration"
+              activeCategory={this.state.activeCategory}
+            />
+            <WorkItem 
+              imgSrc="./images/portfolio_6.jpg" 
+              alt="Some generic alt text"
+              imgCategory="Motion"
+              activeCategory={this.state.activeCategory}
+            />
+            <WorkItem 
+              imgSrc="./images/portfolio_7.jpg" 
+              alt="Some generic alt text"
+              imgCategory="Illustration"
+              activeCategory={this.state.activeCategory}
+            />
+            <WorkItem 
+              imgSrc="./images/portfolio_8.jpg" 
+              alt="Some generic alt text"
+              imgCategory="Graphic"
+              activeCategory={this.state.activeCategory}
+            />
+            <WorkItem 
+              imgSrc="./images/portfolio_9.jpg" 
+              alt="Some generic alt text"
+              imgCategory="Motion"
+              activeCategory={this.state.activeCategory}
+            />
+            <WorkItem 
+              imgSrc="./images/portfolio_10.jpg" 
+              alt="Some generic alt text"
+              imgCategory="Motion"
+              activeCategory={this.state.activeCategory}
+            />
+            <WorkItem 
+              imgSrc="./images/portfolio_11.jpg" 
+              alt="Some generic alt text"
+              imgCategory="Graphic"
+              activeCategory={this.state.activeCategory}
+            />
+            <WorkItem 
+              imgSrc="./images/portfolio_12.jpg" 
+              alt="Some generic alt text"
+              imgCategory="Graphic"
+              activeCategory={this.state.activeCategory}
+            />
+            
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
+
+class GalleryButton extends React.Component {
+  constructor(props) {
+    super(props);
+    
+  };
+
+
+  handleClick = (e) => {
+    let category = e.target.innerHTML
+    this.props.setCategory(category);
+  };
+
+  render(){
+    return (
+      <button onClick={this.handleClick} className={"gallery__button " + (this.props.isActive ? 'gallery__button--active' : '')}>{this.props.category}</button>
+    );
+  }
+}
+
+function WorkItem(props){
+  return (
+    <div className={"work " + ((props.activeCategory === 'All') || (props.imgCategory === props.activeCategory) ? "" : " + work--fade-out")}>
+      <div>
+        <img className="work__img" src={props.imgSrc} alt={props.alt}/>
+      </div>
+    </div>
+  );
+}
+
+// ================== //
+// ================== //
+// ================== //
+
+// ================== //
+//    Get in touch  
+// ================== //
+Contact = () => {
+  return (
+    <div className="container">
+      <h2 className="contact__title">Get in Touch</h2>
+      <p className="contact__subtitle">Curabitur blandit tempus porttitor. Maecenas faucibus mollis interdum.</p>
+    </div>
+  );
+};
+
+// ================== //
+// ================== //
+// ================== //
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      category: 'All'
+    };
+  };
+
   toggleMenu(){
     const btnSpan = document.querySelectorAll('.navigation__button span');
     const btn = document.querySelector('.navigation__button');
@@ -103,6 +268,8 @@ class App extends React.Component {
         <Nav handleToggleMenu={this.toggleMenu}/>
         <HeaderComponent/>
         <Features />
+        <Gallery/>
+        <Contact/>
       </div>
     )
   }
