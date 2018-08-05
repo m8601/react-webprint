@@ -231,9 +231,38 @@ function WorkItem(props){
 // ================== //
 Contact = () => {
   return (
-    <div className="container">
-      <h2 className="contact__title">Get in Touch</h2>
-      <p className="contact__subtitle">Curabitur blandit tempus porttitor. Maecenas faucibus mollis interdum.</p>
+    <div className="contact">
+      <div className="container">
+        <h2 className="contact__title">Get in Touch</h2>
+        <p className="contact__subtitle">Curabitur blandit tempus porttitor. Maecenas faucibus mollis interdum.</p>
+        <div className="contact__wrapper">
+          <div className="contact__adress">
+            <i className="fas fa-map-marker-alt"></i>
+            Moonshine Street No: 14/05 Light City, Jupiter
+          </div>
+          <div className="contact__phone">
+            <i className="fas fa-phone"></i>
+            0247 541 65 87
+          </div>
+        </div>
+        <div className="social-media-links">
+          <div className="social-media-links__rss">
+            <a href="#"><i className="fas fa-rss"></i></a>
+          </div>
+          <div className="social-media-links__facebook">
+            <a href="#"><i className="fab fa-facebook-f"></i></a>
+          </div>
+          <div className="social-media-links__twitter">
+            <a href="#"><i className="fab fa-twitter"></i></a>
+          </div>
+          <div className="social-media-links__dribbble">
+            <a href="#"><i className="fab fa-dribbble"></i></a>
+          </div>
+          <div className="social-media-links__pintrest">
+            <a href="#"><i className="fab fa-pinterest-p"></i></a>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

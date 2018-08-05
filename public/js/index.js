@@ -356,16 +356,85 @@ function WorkItem(props) {
 Contact = function Contact() {
   return React.createElement(
     "div",
-    { className: "container" },
+    { className: "contact" },
     React.createElement(
-      "h2",
-      { className: "contact__title" },
-      "Get in Touch"
-    ),
-    React.createElement(
-      "p",
-      { className: "contact__subtitle" },
-      "Curabitur blandit tempus porttitor. Maecenas faucibus mollis interdum."
+      "div",
+      { className: "container" },
+      React.createElement(
+        "h2",
+        { className: "contact__title" },
+        "Get in Touch"
+      ),
+      React.createElement(
+        "p",
+        { className: "contact__subtitle" },
+        "Curabitur blandit tempus porttitor. Maecenas faucibus mollis interdum."
+      ),
+      React.createElement(
+        "div",
+        { className: "contact__wrapper" },
+        React.createElement(
+          "div",
+          { className: "contact__adress" },
+          React.createElement("i", { className: "fas fa-map-marker-alt" }),
+          "Moonshine Street No: 14/05 Light City, Jupiter"
+        ),
+        React.createElement(
+          "div",
+          { className: "contact__phone" },
+          React.createElement("i", { className: "fas fa-phone" }),
+          "0247 541 65 87"
+        )
+      ),
+      React.createElement(
+        "div",
+        { className: "social-media-links" },
+        React.createElement(
+          "div",
+          { className: "social-media-links__rss" },
+          React.createElement(
+            "a",
+            { href: "#" },
+            React.createElement("i", { className: "fas fa-rss" })
+          )
+        ),
+        React.createElement(
+          "div",
+          { className: "social-media-links__facebook" },
+          React.createElement(
+            "a",
+            { href: "#" },
+            React.createElement("i", { className: "fab fa-facebook-f" })
+          )
+        ),
+        React.createElement(
+          "div",
+          { className: "social-media-links__twitter" },
+          React.createElement(
+            "a",
+            { href: "#" },
+            React.createElement("i", { className: "fab fa-twitter" })
+          )
+        ),
+        React.createElement(
+          "div",
+          { className: "social-media-links__dribbble" },
+          React.createElement(
+            "a",
+            { href: "#" },
+            React.createElement("i", { className: "fab fa-dribbble" })
+          )
+        ),
+        React.createElement(
+          "div",
+          { className: "social-media-links__pintrest" },
+          React.createElement(
+            "a",
+            { href: "#" },
+            React.createElement("i", { className: "fab fa-pinterest-p" })
+          )
+        )
+      )
     )
   );
 };
