@@ -443,6 +443,29 @@ Contact = function Contact() {
 // ================== //
 // ================== //
 
+// ================== //
+//    Footer  
+// ================== //
+Footer = function Footer() {
+  return React.createElement(
+    "div",
+    { className: "footer" },
+    React.createElement(
+      "div",
+      { className: "container" },
+      React.createElement(
+        "div",
+        { className: "footer__wrapper" },
+        "@2013 Webpaint. All Rights Reserved."
+      )
+    )
+  );
+};
+
+// ================== //
+// ================== //
+// ================== //
+
 var App = function (_React$Component3) {
   _inherits(App, _React$Component3);
 
@@ -481,7 +504,8 @@ var App = function (_React$Component3) {
         React.createElement(HeaderComponent, null),
         React.createElement(Features, null),
         React.createElement(Gallery, null),
-        React.createElement(Contact, null)
+        React.createElement(Contact, null),
+        React.createElement(Footer, null)
       );
     }
   }]);

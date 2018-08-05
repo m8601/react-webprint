@@ -270,6 +270,26 @@ Contact = () => {
 // ================== //
 // ================== //
 // ================== //
+
+// ================== //
+//    Footer  
+// ================== //
+Footer = () => {
+  return (
+    <div className="footer">
+      <div className="container">
+        <div className="footer__wrapper">
+          @2013 Webpaint. All Rights Reserved.
+        </div>
+      </div>
+    </div>
+  );
+}
+
+
+// ================== //
+// ================== //
+// ================== //
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -299,6 +319,7 @@ class App extends React.Component {
         <Features />
         <Gallery/>
         <Contact/>
+        <Footer/>
       </div>
     )
   }
